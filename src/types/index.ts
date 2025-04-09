@@ -1,5 +1,10 @@
 import { z } from 'zod'
-import { TaskSchema, TaskApiResponseSchema } from '../utils/task-schema'
+import {
+	TaskApiResponseSchema,
+	TaskSchema,
+	taskSchemaPlain,
+} from "../utils/task-schema"
 
+export type TaskPlain = z.infer<typeof taskSchemaPlain>
 export type Task = z.infer<typeof TaskSchema>
 export type Tasks = z.infer<typeof TaskApiResponseSchema>

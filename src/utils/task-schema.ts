@@ -2,14 +2,16 @@ import { z } from 'zod'
 
 
 export const TaskSchema = z.object({
-    id: z.string(),
-    title: z.string(),
-    description: z.string(),
-    status: z.string()
+	_id: z.string(),
+	title: z.string(),
+	description: z.string(),
+	status: z.string(),
 })
 
-export const TaskApiResponseSchema = z.object({
-    tasks: z.array(TaskSchema)
+export const TaskApiResponseSchema = z.array(TaskSchema)
+
+export const taskSchemaPlain = z.object({
+	title: z.string(),
+	description: z.string(),
+	status: z.string(),
 })
-
-
